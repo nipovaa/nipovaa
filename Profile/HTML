@@ -1,0 +1,16 @@
+<!DOCTYPE html
+<html>
+<head>
+  <title>Nipovaa Global</title>
+</head>
+<body>
+  <h1>Welcome to Nipovaa</h1>
+<a href="/music/">Music PlatForm</
+a><br>
+<a href="/tv/">TV Station</a><br>
+<a href="/radio/">Radio Station</
+a><br>
+<a href="/browser/">Browser App</a>
+
+</body>
+</html>
