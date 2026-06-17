@@ -1,0 +1,5 @@
+<audio controls autoplay>
+  <source
+src="https://stream-url.com/live"
+ type="audio/mpeg">
+</audio>
