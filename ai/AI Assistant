@@ -1,0 +1,22 @@
+<input type="text" id="prompt">
+<button onclick="askAI()">Ask AI</
+button>
+<div id="response"></div>
+<script>
+async function askAI(){
+  const
+prompt=document.getElementById("prompt")
+   value;
+
+const res = await fetch("/api/ai",{
+   method:"POST",
+   headers:{"Content-Type":"application/
+json"},
+  body:JSON.stringify({prompt})
+});
+
+const data = await res.json();
+
+document.getElementById("response").innerHTML=data reply;
+}
+</script>
