@@ -1,0 +1,4 @@
+echo "www.nipovaa.com" > CNAME
+git add CNAME
+git commit -m "add custom domain"
+git push
