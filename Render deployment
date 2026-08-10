@@ -1,0 +1,12 @@
+services
+   - type: web
+     name: nipovaa-api
+     runtime: node
+     rootDir: backend
+     startCommand: node src/server.js
+
+- type: web
+  name: nipovaa-web
+  runtime: node
+  rootDir: apps/web
+  StartCommand: npm run start
