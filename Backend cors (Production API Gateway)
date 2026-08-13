@@ -1,0 +1,39 @@
+require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+const ratelimit = require("express-rate-limit")
+
+const connectDB = require("./config/db");
+
+const app = express();
+
+connectDB();
+
+app.use(cors());
+app.use(helmet());
+app.use(express.json());
+
+app.use(ratelimit ({
+    windowMs: 15 * 60 * 1000,
+      max: 1000
+}));
+
+// Routes
+
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/wallet", require("./routes/wallet"));
+app.use("/api/billing", require("./routes/billing"));
+app.use("/api/services/vpn", require("./routes/vpn"));
+app.use("/api/services/domains", require("./routes/domains"));
+app.use("/api/services/hosting"));
+app.use("/api/ai", require("./routes/ai"));
+
+app.get("/", ( req, res) => {
+   res.json({ status: "Nipovaa Saas Running" });
+});
+
+app.listen (process.env.Port || 3000);
+      
