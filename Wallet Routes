@@ -1,0 +1,25 @@
+const express = require("express");
+const wallet = require("../models/Wallet");
+
+const router = express.Router();
+
+router.get("/:userId", async (req, res) => {
+    const wallet = await
+Wallet.findOne{ userId: req.params.userId });
+   res.json(wallet || { balance:0 });
+});
+
+router.post("/credit", async (req, res) =>
+   const { userId, amount } = req.body;
+
+const wallet = await
+Wallet.findOneAnd Update(
+     { userId },
+     { $inc: { balance: amount } },
+     { upsert: true, new: true }
+);
+
+res.json(wallet);
+});
+
+module.exports = router;
