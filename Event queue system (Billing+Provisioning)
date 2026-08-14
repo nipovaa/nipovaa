@@ -1,0 +1,3 @@
+const { Queue } = require("billing");
+const eventQueue = new Queue ("events");
+module.exports = eventQueue;
