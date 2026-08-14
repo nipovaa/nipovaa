@@ -1,0 +1,12 @@
+const { Worker ) = require("billing");
+
+new Worker("events", async job => {
+
+if (job.name === "vpn.create") {
+       console.log("Provision VPN");
+}
+if (job.name === "domain.register") {
+    console.log("Register domain");
+}
+
+});
