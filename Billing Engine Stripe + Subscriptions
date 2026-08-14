@@ -1,0 +1,27 @@
+const stripe = require("stripe");
+const stripe =
+Stripe(process.env.STRIPE_SECRET_KEY);
+
+const createCheckout = async (userId, plan) => {
+    return
+Stripe.Checkout.sessions.create({
+         mode: "subscription",
+         payment_method_types: ["card"],
+         line_items: [
+           {
+           price_data: {
+             currency: "usd",
+             product_data: { name: plan.name },
+             unit_amount: plan.price * 100,
+             recurring: { interval: "month"
+             }
+             },
+             quality: 1
+             }
+             },
+success_url:"https://app/success"
+cancel_url:"https//app/cancel"
+});
+};
+
+module.exports = { createCheckout };
