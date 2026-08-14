@@ -1,0 +1,7 @@
+git init
+git add .
+git commit -m "deploy nipovaa api"
+git branch -M main
+git remote add origin
+https://github.com/nipovaa/nipovaa.git
+git push -u origin main
